@@ -35,7 +35,7 @@
       transition: all 0.2s;
     }
 
-    /* header: Ani's birthday + Shailee sister */
+    /* header */
     .hero {
       display: flex;
       flex-wrap: wrap;
@@ -87,7 +87,7 @@
       color: #b87333;
     }
 
-    /* two characters: Ani (boy) & Shailee (sister) */
+    /* characters */
     .characters {
       display: flex;
       flex-wrap: wrap;
@@ -154,7 +154,7 @@
       color: #b6792e;
     }
 
-    /* CUT THE CAKE + CELEBRATE TOGETHER */
+    /* CTA celebrate */
     .cta-celebrate {
       background: #fcf0d4;
       border-radius: 100px 30px 100px 30px;
@@ -211,9 +211,18 @@
       background: #fce8be;
     }
 
-    /* photo gallery */
+    /* gallery with upload */
     .gallery-section {
       margin: 2.2rem 0 1.8rem;
+    }
+
+    .gallery-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.8rem 1.5rem;
+      margin-bottom: 1.2rem;
     }
 
     .gallery-title {
@@ -225,8 +234,50 @@
       display: inline-block;
       padding: 0.3rem 2rem;
       border-radius: 40px;
-      margin-bottom: 1rem;
       box-shadow: inset 0 1px 6px rgba(255, 215, 0, 0.2);
+    }
+
+    .upload-btn-wrapper {
+      position: relative;
+      overflow: hidden;
+      display: inline-block;
+    }
+
+    .upload-btn-wrapper input[type=file] {
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+    }
+
+    .upload-btn {
+      background: #f7e4bb;
+      border: 2px solid #ebcfa0;
+      border-radius: 60px;
+      padding: 0.4rem 1.8rem;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #7a5f2c;
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      box-shadow: 0 3px 0 #dbb87a;
+      cursor: pointer;
+    }
+
+    .upload-btn:hover {
+      background: #fce8be;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 0 #dbb87a;
+    }
+
+    .upload-btn i {
+      color: #b87333;
+      font-size: 1.2rem;
     }
 
     .gallery-grid {
@@ -248,6 +299,7 @@
       flex-direction: column;
       align-items: center;
       backdrop-filter: blur(2px);
+      position: relative;
     }
 
     .photo-card:hover {
@@ -270,11 +322,23 @@
       background-image: radial-gradient(circle at 20% 25%, #fcedc8 2px, transparent 2px);
       background-size: 24px 24px;
       position: relative;
+      overflow: hidden;
+    }
+
+    .photo-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 28px 10px 28px 10px;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .photo-placeholder i {
       opacity: 0.7;
       filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+      z-index: 1;
     }
 
     .photo-card .photo-label {
@@ -297,13 +361,15 @@
       filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
       transform: rotate(8deg);
       transition: 0.2s;
+      z-index: 2;
+      pointer-events: none;
     }
 
     .photo-card:hover .photo-sticker {
       transform: rotate(0deg) scale(1.1);
     }
 
-    /* special stickers: bouquet, cake, balloons */
+    /* special stickers */
     .special-stickers {
       display: flex;
       flex-wrap: wrap;
@@ -337,7 +403,7 @@
       color: #9f671f;
     }
 
-    /* message: Ani's birthday, Shailee sister */
+    /* message */
     .birthday-message {
       background: #f6e7c6;
       border-radius: 80px 20px 80px 20px;
@@ -371,6 +437,35 @@
       border: 1px solid #ebcfa0;
     }
 
+    .remove-btn {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      background: #e65c5c;
+      color: white;
+      border: 2px solid #fef7e0;
+      border-radius: 50%;
+      width: 26px;
+      height: 26px;
+      font-size: 12px;
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 5;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      transition: 0.2s;
+    }
+
+    .photo-card:hover .remove-btn {
+      display: flex;
+    }
+
+    .remove-btn:hover {
+      background: #c0392b;
+      transform: scale(1.1);
+    }
+
     @media (max-width: 600px) {
       .card { padding: 1.5rem 1rem; }
       .hero h1 { font-size: 2.5rem; }
@@ -382,13 +477,15 @@
       .character-name { font-size: 1.4rem; }
       .cta-celebrate span { font-size: 1.2rem; }
       .cta-btn { font-size: 1.1rem; padding: 0.2rem 1.2rem; }
+      .gallery-header { flex-direction: column; align-items: stretch; }
+      .upload-btn-wrapper { align-self: center; }
     }
   </style>
 </head>
 <body>
   <div class="card">
 
-    <!-- HEADER: Ani & Shailee (sister) -->
+    <!-- HEADER -->
     <div class="hero">
       <h1>
         <span>Ani</span>
@@ -405,9 +502,8 @@
       </div>
     </div>
 
-    <!-- TWO CHARACTERS: Ani (boy) & Shailee (sister) -->
+    <!-- CHARACTERS -->
     <div class="characters">
-      <!-- Ani – birthday boy -->
       <div class="character-card">
         <div class="character-avatar">🧑🏻</div>
         <div class="character-name">Ani</div>
@@ -417,8 +513,6 @@
           <i class="fas fa-star" style="color:#eab652;"></i>
         </div>
       </div>
-
-      <!-- Shailee – sister -->
       <div class="character-card">
         <div class="character-avatar">👧🏻</div>
         <div class="character-name">Shailee</div>
@@ -430,7 +524,7 @@
       </div>
     </div>
 
-    <!-- CUT THE CAKE · CELEBRATE TOGETHER -->
+    <!-- CTA -->
     <div class="cta-celebrate">
       <span>
         <i class="fas fa-birthday-cake"></i> Cut the cake 
@@ -441,56 +535,68 @@
       </span>
     </div>
 
-    <!-- PHOTO GALLERY -->
+    <!-- GALLERY WITH UPLOAD -->
     <div class="gallery-section">
-      <div class="gallery-title">
-        <i class="fas fa-images" style="margin-right: 10px;"></i>  from gallery · happy moments
+      <div class="gallery-header">
+        <div class="gallery-title">
+          <i class="fas fa-images" style="margin-right: 10px;"></i>  from gallery · happy moments
+        </div>
+        <div class="upload-btn-wrapper">
+          <button class="upload-btn"><i class="fas fa-plus-circle"></i> Add photo</button>
+          <input type="file" accept="image/*" multiple id="photoUpload" />
+        </div>
       </div>
 
-      <div class="gallery-grid">
-        <div class="photo-card">
+      <div class="gallery-grid" id="galleryGrid">
+        <!-- default photo cards -->
+        <div class="photo-card" data-id="1">
           <div class="photo-placeholder">
             <i class="fas fa-camera" style="font-size: 2.8rem;"></i>
             <span class="photo-sticker"><i class="fas fa-heart" style="color:#d46b6b;"></i></span>
           </div>
           <span class="photo-label"><i class="fas fa-user"></i> Ani & Shailee</span>
+          <button class="remove-btn" data-id="1">✕</button>
         </div>
 
-        <div class="photo-card">
+        <div class="photo-card" data-id="2">
           <div class="photo-placeholder">
             <i class="fas fa-image" style="font-size: 2.8rem;"></i>
             <span class="photo-sticker"><i class="fas fa-star" style="color:#e6b450;"></i></span>
           </div>
           <span class="photo-label"><i class="fas fa-user"></i> Ani</span>
+          <button class="remove-btn" data-id="2">✕</button>
         </div>
 
-        <div class="photo-card">
+        <div class="photo-card" data-id="3">
           <div class="photo-placeholder">
             <i class="fas fa-camera-retro" style="font-size: 2.8rem;"></i>
             <span class="photo-sticker"><i class="fas fa-cake" style="color:#c98240;"></i></span>
           </div>
           <span class="photo-label"><i class="fas fa-users"></i> Shailee</span>
+          <button class="remove-btn" data-id="3">✕</button>
         </div>
 
-        <div class="photo-card">
+        <div class="photo-card" data-id="4">
           <div class="photo-placeholder">
             <i class="fas fa-palette" style="font-size: 2.8rem;"></i>
             <span class="photo-sticker"><i class="fas fa-balloon" style="color:#66b5b5;"></i></span>
           </div>
           <span class="photo-label"><i class="fas fa-heart"></i> fun</span>
+          <button class="remove-btn" data-id="4">✕</button>
         </div>
 
-        <div class="photo-card">
+        <div class="photo-card" data-id="5">
           <div class="photo-placeholder">
             <i class="fas fa-smile" style="font-size: 2.8rem;"></i>
             <span class="photo-sticker"><i class="fas fa-gift" style="color:#b47b3a;"></i></span>
           </div>
           <span class="photo-label"><i class="fas fa-cake"></i> birthday</span>
+          <button class="remove-btn" data-id="5">✕</button>
         </div>
       </div>
     </div>
 
-    <!-- BOUQUET, CAKE, BALLOONS STICKERS -->
+    <!-- STICKERS -->
     <div class="special-stickers">
       <span><i class="fas fa-bouquet"></i> bouquet</span>
       <span><i class="fas fa-birthday-cake"></i> cake</span>
@@ -499,7 +605,7 @@
       <span><i class="fas fa-music"></i> melody</span>
     </div>
 
-    <!-- MESSAGE: Ani's birthday with sister Shailee -->
+    <!-- MESSAGE -->
     <div class="birthday-message">
       <p>
         <i class="fas fa-birthday-cake" style="font-size: 1.8rem;"></i>
@@ -512,7 +618,7 @@
       </p>
     </div>
 
-    <!-- footer -->
+    <!-- FOOTER -->
     <div style="display: flex; justify-content: center; gap: 0.3rem 1.2rem; flex-wrap: wrap; margin-top: 0.5rem; font-size: 1.6rem; color:#c6964b;">
       <i class="fas fa-cake"></i>
       <i class="fas fa-balloon" style="color:#d47575;"></i>
@@ -523,11 +629,102 @@
     </div>
 
     <div class="footer-note">
-      <i class="fas fa-camera"></i>  add your photos from gallery  <i class="fas fa-images"></i>
+      <i class="fas fa-camera"></i>  click "Add photo" to upload from your gallery  <i class="fas fa-images"></i>
     </div>
     <div style="margin-top: 0.8rem; font-size: 0.8rem; color: #b4873d; opacity: 0.7; text-align: center; letter-spacing: 0.5px;">
       <i class="fas fa-paint-brush"></i> light yellow theme · stickers: bouquet, cake, balloons & more
     </div>
   </div>
+
+  <script>
+    (function() {
+      const galleryGrid = document.getElementById('galleryGrid');
+      const fileInput = document.getElementById('photoUpload');
+      let photoCounter = 100; // for unique IDs
+
+      // Function to create a new photo card with an uploaded image
+      function createPhotoCard(src, label = '📸 from gallery') {
+        const card = document.createElement('div');
+        card.className = 'photo-card';
+        const id = photoCounter++;
+        card.dataset.id = id;
+
+        const placeholder = document.createElement('div');
+        placeholder.className = 'photo-placeholder';
+
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Uploaded photo';
+        placeholder.appendChild(img);
+
+        // sticker
+        const sticker = document.createElement('span');
+        sticker.className = 'photo-sticker';
+        sticker.innerHTML = '<i class="fas fa-heart" style="color:#d46b6b;"></i>';
+        placeholder.appendChild(sticker);
+
+        card.appendChild(placeholder);
+
+        const labelSpan = document.createElement('span');
+        labelSpan.className = 'photo-label';
+        labelSpan.innerHTML = `<i class="fas fa-image"></i> ${label}`;
+        card.appendChild(labelSpan);
+
+        // remove button
+        const removeBtn = document.createElement('button');
+        removeBtn.className = 'remove-btn';
+        removeBtn.dataset.id = id;
+        removeBtn.textContent = '✕';
+        removeBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const parentCard = this.closest('.photo-card');
+          if (parentCard) {
+            parentCard.remove();
+          }
+        });
+        card.appendChild(removeBtn);
+
+        return card;
+      }
+
+      // Handle file uploads
+      fileInput.addEventListener('change', function(e) {
+        const files = Array.from(e.target.files);
+        if (files.length === 0) return;
+
+        files.forEach(file => {
+          if (!file.type.startsWith('image/')) return;
+
+          const reader = new FileReader();
+          reader.onload = function(ev) {
+            const imgSrc = ev.target.result;
+            // label with filename (shortened)
+            let label = file.name;
+            if (label.length > 20) label = label.substring(0, 18) + '…';
+            const newCard = createPhotoCard(imgSrc, label);
+            galleryGrid.appendChild(newCard);
+          };
+          reader.readAsDataURL(file);
+        });
+
+        // Reset input so same file can be re-uploaded
+        fileInput.value = '';
+      });
+
+      // Remove button for default cards (already have remove buttons)
+      document.querySelectorAll('.remove-btn').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const card = this.closest('.photo-card');
+          if (card) {
+            card.remove();
+          }
+        });
+      });
+
+      // Optional: drag and drop support for gallery? but keep it simple
+      console.log('📸 Gallery ready – upload photos from your device!');
+    })();
+  </script>
 </body>
 </html>
