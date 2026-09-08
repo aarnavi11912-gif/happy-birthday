@@ -3,728 +3,1542 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>🎈 Happy Birthday Ani · Shailee & Ani</title>
-  <!-- Font Awesome 6 (free) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <title>Happy Birthday Ani 🎂</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #fff9e6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 2rem 1.5rem;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(
+        135deg,
+        #fff9c4,
+        #fff3b0,
+        #fff8dc,
+        #ffefb5
+      );
+      color: #5c4530;
+      overflow-x: hidden;
     }
 
-    .card {
-      max-width: 1100px;
+    /* ==============================
+       NAVBAR
+    ============================== */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      background: rgba(255, 251, 235, 0.7);
-      backdrop-filter: blur(2px);
-      border-radius: 60px 60px 40px 40px;
-      box-shadow: 0 20px 40px rgba(255, 215, 100, 0.25), 0 8px 20px rgba(255, 200, 80, 0.2);
-      padding: 2rem 2rem 3rem;
-      border: 2px solid #fce6b4;
-      transition: all 0.2s;
+      z-index: 1000;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 16px 7%;
+
+      background: rgba(255, 249, 196, 0.85);
+      backdrop-filter: blur(12px);
+
+      box-shadow: 0 4px 25px rgba(150, 100, 50, 0.1);
     }
 
-    /* header */
-    .hero {
+    .logo {
+      font-family: "Pacifico", cursive;
+      font-size: 26px;
+      color: #e59635;
+    }
+
+    nav ul {
       display: flex;
-      flex-wrap: wrap;
+      list-style: none;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #70543b;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #e7973c;
+    }
+
+    /* ==============================
+       HERO
+    ============================== */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
       justify-content: center;
       align-items: center;
-      gap: 0.8rem 1.8rem;
-      margin-bottom: 1.8rem;
+
+      text-align: center;
       position: relative;
+      padding: 100px 20px 50px;
+
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      max-width: 850px;
+    }
+
+    .small-text {
+      font-size: 20px;
+      font-weight: 600;
+      color: #c98734;
+      margin-bottom: 12px;
     }
 
     .hero h1 {
-      font-size: 3.8rem;
+      font-family: "Pacifico", cursive;
+      font-size: clamp(55px, 10vw, 105px);
+      color: #e59838;
+      text-shadow:
+        3px 3px 0 #fff,
+        6px 6px 18px rgba(210, 150, 80, 0.25);
+
+      animation: titleFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes titleFloat {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    .hero h2 {
+      font-size: clamp(24px, 4vw, 42px);
+      margin-top: 10px;
+      color: #7c583b;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 20px auto;
+      line-height: 1.8;
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-block;
+      border: none;
+      outline: none;
+      cursor: pointer;
+
+      padding: 14px 28px;
+      margin: 10px;
+
+      border-radius: 50px;
+
+      background: linear-gradient(135deg, #ffc85c, #e99a3e);
+      color: white;
+
+      font-family: "Poppins", sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+
+      box-shadow: 0 8px 20px rgba(224, 156, 60, 0.28);
+
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px) scale(1.04);
+      box-shadow: 0 12px 25px rgba(224, 156, 60, 0.4);
+    }
+
+    /* ==============================
+       FLOATING STICKERS
+    ============================== */
+
+    .sticker {
+      position: absolute;
+      font-size: 45px;
+      z-index: 1;
+
+      filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.1));
+
+      animation: floating 4s ease-in-out infinite;
+    }
+
+    @keyframes floating {
+      0%,
+      100% {
+        transform: translateY(0) rotate(-6deg);
+      }
+
+      50% {
+        transform: translateY(-20px) rotate(6deg);
+      }
+    }
+
+    .s1 {
+      top: 18%;
+      left: 7%;
+    }
+
+    .s2 {
+      top: 27%;
+      right: 8%;
+      animation-delay: 1s;
+    }
+
+    .s3 {
+      bottom: 18%;
+      left: 12%;
+      animation-delay: 2s;
+    }
+
+    .s4 {
+      bottom: 16%;
+      right: 12%;
+      animation-delay: 0.5s;
+    }
+
+    .s5 {
+      top: 60%;
+      right: 3%;
+      animation-delay: 1.5s;
+    }
+
+    /* ==============================
+       BALLOONS
+    ============================== */
+
+    .balloon {
+      width: 65px;
+      height: 82px;
+
+      border-radius: 50% 50% 45% 45%;
+
+      position: absolute;
+      bottom: -100px;
+
+      opacity: 0.85;
+
+      animation: balloonUp linear infinite;
+    }
+
+    .balloon::after {
+      content: "";
+      position: absolute;
+
+      width: 1px;
+      height: 100px;
+
+      background: rgba(100, 70, 50, 0.3);
+
+      left: 50%;
+      top: 80px;
+    }
+
+    .b1 {
+      left: 5%;
+      background: #ffbb8d;
+      animation-duration: 10s;
+    }
+
+    .b2 {
+      left: 20%;
+      background: #f9d66d;
+      animation-duration: 13s;
+      animation-delay: 2s;
+    }
+
+    .b3 {
+      right: 20%;
+      background: #fab8c4;
+      animation-duration: 12s;
+      animation-delay: 1s;
+    }
+
+    .b4 {
+      right: 5%;
+      background: #bce0a6;
+      animation-duration: 14s;
+      animation-delay: 3s;
+    }
+
+    @keyframes balloonUp {
+      from {
+        transform: translateY(0);
+      }
+
+      to {
+        transform: translateY(-130vh) rotate(10deg);
+      }
+    }
+
+    /* ==============================
+       SECTIONS
+    ============================== */
+
+    section {
+      padding: 90px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title span {
+      color: #dc933b;
+      font-size: 15px;
       font-weight: 700;
-      letter-spacing: 2px;
-      color: #b8862b;
-      text-shadow: 4px 4px 0 #f7e2b0, 0 2px 10px rgba(255, 215, 0, 0.2);
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      flex-wrap: wrap;
-      justify-content: center;
+      text-transform: uppercase;
+      letter-spacing: 3px;
     }
 
-    .hero h1 .heart {
-      color: #e65c5c;
-      font-size: 3.2rem;
-      filter: drop-shadow(0 4px 6px rgba(230, 92, 92, 0.3));
+    .section-title h2 {
+      font-family: "Pacifico", cursive;
+      color: #7d5638;
+      font-size: clamp(35px, 6vw, 55px);
+      margin-top: 8px;
     }
 
-    .hero-stickers {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.8rem 1.2rem;
-      font-size: 2.4rem;
-      background: rgba(255, 235, 170, 0.5);
-      padding: 0.6rem 1.8rem;
-      border-radius: 100px;
-      backdrop-filter: blur(4px);
-      border: 1px solid #f9d98e;
+    /* ==============================
+       BROTHER SISTER CHARACTERS
+    ============================== */
+
+    .characters-section {
+      background: rgba(255, 255, 255, 0.35);
     }
 
-    .hero-stickers i {
-      transition: 0.2s ease;
-      color: #d9a066;
-    }
-    .hero-stickers i:hover {
-      transform: scale(1.2) rotate(4deg);
-      color: #b87333;
-    }
-
-    /* characters */
     .characters {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
-      gap: 2rem 3rem;
-      margin: 1.8rem 0 2rem;
+      align-items: flex-end;
+      gap: 50px;
+      flex-wrap: wrap;
     }
 
     .character-card {
-      background: #fef7e0;
-      border-radius: 60px 20px 60px 20px;
-      padding: 1.2rem 1.8rem 1.8rem;
-      box-shadow: 0 12px 20px rgba(190, 155, 70, 0.15), 0 0 0 2px #fbe39e;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 160px;
-      transition: 0.2s;
-      border: 1px solid #f5d99a;
+      width: 310px;
+      min-height: 470px;
+
+      padding: 25px;
+
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.65);
+
+      border-radius: 35px;
+
+      box-shadow: 0 12px 40px rgba(149, 105, 50, 0.13);
+
+      border: 2px solid rgba(255, 255, 255, 0.7);
+
+      position: relative;
+
+      transition: 0.3s;
     }
 
     .character-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 16px 28px rgba(200, 160, 60, 0.25);
+      transform: translateY(-8px);
     }
 
-    .character-avatar {
-      font-size: 4.8rem;
-      line-height: 1;
-      background: #fbefd0;
-      padding: 0.4rem 0.8rem;
-      border-radius: 100px;
-      margin-bottom: 0.3rem;
-      border: 2px solid #ebcfa0;
-      box-shadow: inset 0 2px 8px rgba(255, 215, 0, 0.2);
-    }
-
-    .character-name {
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #7a5f2c;
-      letter-spacing: 1px;
-      background: #f7e4bb;
-      padding: 0.1rem 1.6rem;
-      border-radius: 60px;
-      border: 1px solid #ebcfa0;
-      margin-top: 0.2rem;
-    }
-
-    .character-role {
-      font-size: 0.9rem;
-      background: #fdf3d5;
-      padding: 0.2rem 1.2rem;
-      border-radius: 40px;
-      color: #9b7e4b;
-      margin-top: 0.2rem;
-      border: 1px solid #f5d99a;
-    }
-
-    .character-card .cute-sticker {
-      font-size: 1.8rem;
-      margin-top: 0.2rem;
-      color: #b6792e;
-    }
-
-    /* CTA celebrate */
-    .cta-celebrate {
-      background: #fcf0d4;
-      border-radius: 100px 30px 100px 30px;
-      padding: 0.8rem 2rem;
-      margin: 0.2rem 0 1.8rem;
-      border: 2px solid #f5d99a;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 0.6rem 1.8rem;
-      box-shadow: 0 6px 0 #dbb87a;
-    }
-
-    .cta-celebrate span {
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: #7a5f2c;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .cta-celebrate i {
-      color: #c78f44;
-      font-size: 2rem;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
-    }
-
-    .cta-btn {
-      background: #fae3b3;
-      border: 2px solid #dbb87a;
-      border-radius: 60px;
-      padding: 0.3rem 1.8rem;
-      font-size: 1.4rem;
-      font-weight: 600;
-      color: #7a5f2c;
-      transition: 0.2s;
-      box-shadow: 0 4px 0 #b8894b;
-      cursor: default;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-    }
-
-    .cta-btn i {
-      font-size: 1.8rem;
-      color: #b87333;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 0 #b8894b;
-      background: #fce8be;
-    }
-
-    /* gallery with upload */
-    .gallery-section {
-      margin: 2.2rem 0 1.8rem;
-    }
-
-    .gallery-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 0.8rem 1.5rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .gallery-title {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #ab7a3a;
-      letter-spacing: 1px;
-      background: #fbeec8;
-      display: inline-block;
-      padding: 0.3rem 2rem;
-      border-radius: 40px;
-      box-shadow: inset 0 1px 6px rgba(255, 215, 0, 0.2);
-    }
-
-    .upload-btn-wrapper {
+    .character {
+      width: 190px;
+      height: 270px;
       position: relative;
-      overflow: hidden;
-      display: inline-block;
+      margin: auto;
     }
 
-    .upload-btn-wrapper input[type=file] {
+    /* HEAD */
+
+    .head {
+      width: 110px;
+      height: 125px;
+
+      border-radius: 48%;
+
+      background: #f2bd8c;
+
       position: absolute;
-      left: 0;
-      top: 0;
-      opacity: 0;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
+
+      left: 50%;
+      top: 38px;
+
+      transform: translateX(-50%);
+
+      z-index: 5;
     }
 
-    .upload-btn {
-      background: #f7e4bb;
-      border: 2px solid #ebcfa0;
+    .hair {
+      width: 118px;
+      height: 67px;
+
+      background: #4b3325;
+
+      position: absolute;
+
+      top: 28px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      border-radius: 60px 60px 15px 15px;
+
+      z-index: 7;
+    }
+
+    .boy .hair::before {
+      content: "";
+
+      width: 48px;
+      height: 45px;
+
+      background: #4b3325;
+
+      position: absolute;
+
+      left: 7px;
+      top: -18px;
+
+      border-radius: 50%;
+
+      transform: rotate(-20deg);
+    }
+
+    .girl .hair {
+      height: 165px;
+      width: 125px;
       border-radius: 60px;
-      padding: 0.4rem 1.8rem;
-      font-size: 1.1rem;
-      font-weight: 500;
-      color: #7a5f2c;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      box-shadow: 0 3px 0 #dbb87a;
-      cursor: pointer;
     }
 
-    .upload-btn:hover {
-      background: #fce8be;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 0 #dbb87a;
-    }
-
-    .upload-btn i {
-      color: #b87333;
-      font-size: 1.2rem;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-      gap: 1.5rem;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .photo-card {
-      background: #fef7e0;
-      border-radius: 40px 20px 40px 20px;
-      padding: 0.8rem 0.8rem 1.2rem;
-      box-shadow: 0 10px 18px rgba(215, 175, 80, 0.15), 0 0 0 2px #fbe39e;
-      transition: 0.2s;
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      backdrop-filter: blur(2px);
-      position: relative;
-    }
-
-    .photo-card:hover {
-      transform: scale(1.02);
-      box-shadow: 0 16px 28px rgba(200, 160, 60, 0.25);
-    }
-
-    .photo-placeholder {
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      background: #f6e3ba;
-      border-radius: 30px 12px 30px 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 3rem;
-      color: #bf8f4a;
-      border: 2px dashed #ebc47a;
-      transition: 0.2s;
-      background-image: radial-gradient(circle at 20% 25%, #fcedc8 2px, transparent 2px);
-      background-size: 24px 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .photo-placeholder img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      border-radius: 28px 10px 28px 10px;
+    .eye {
       position: absolute;
-      top: 0;
-      left: 0;
+      top: 67px;
+
+      width: 9px;
+      height: 11px;
+
+      border-radius: 50%;
+
+      background: #38291f;
+
+      z-index: 8;
     }
 
-    .photo-placeholder i {
-      opacity: 0.7;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
-      z-index: 1;
+    .eye.left {
+      left: 32px;
     }
 
-    .photo-card .photo-label {
-      margin-top: 0.5rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      color: #8b6f38;
-      background: #f7e4bb;
-      padding: 0.2rem 1.2rem;
-      border-radius: 30px;
-      letter-spacing: 0.5px;
-      border: 1px solid #ebcfa0;
+    .eye.right {
+      right: 32px;
     }
 
-    .photo-sticker {
+    .smile {
       position: absolute;
-      bottom: -8px;
-      right: -8px;
-      font-size: 2rem;
-      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
-      transform: rotate(8deg);
-      transition: 0.2s;
+
+      width: 35px;
+      height: 18px;
+
+      border-bottom: 4px solid #9b594e;
+      border-radius: 50%;
+
+      left: 50%;
+      bottom: 24px;
+
+      transform: translateX(-50%);
+
+      z-index: 9;
+    }
+
+    /* BODY */
+
+    .body-shape {
+      width: 118px;
+      height: 125px;
+
+      position: absolute;
+
+      left: 50%;
+      top: 145px;
+
+      transform: translateX(-50%);
+
+      border-radius: 30px 30px 15px 15px;
+
+      z-index: 3;
+    }
+
+    .boy .body-shape {
+      background: #84b6d9;
+    }
+
+    .girl .body-shape {
+      background: #f1a3b8;
+      border-radius: 30px 30px 60px 60px;
+    }
+
+    .arm {
+      position: absolute;
+
+      width: 24px;
+      height: 100px;
+
+      background: #f2bd8c;
+
+      top: 155px;
+
+      border-radius: 15px;
+
       z-index: 2;
-      pointer-events: none;
     }
 
-    .photo-card:hover .photo-sticker {
-      transform: rotate(0deg) scale(1.1);
+    .arm.left {
+      left: 29px;
+      transform: rotate(13deg);
     }
 
-    /* special stickers */
-    .special-stickers {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 0.8rem 1.8rem;
-      margin: 2rem 0 0.5rem;
-      padding: 0.8rem 1.5rem;
-      background: #fdf3d5;
-      border-radius: 100px;
-      border: 1px solid #f5d99a;
+    .arm.right {
+      right: 29px;
+      transform: rotate(-13deg);
     }
 
-    .special-stickers span {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-size: 1.7rem;
-      background: #f8e7be;
-      padding: 0.2rem 1.2rem;
-      border-radius: 40px;
-      box-shadow: inset 0 2px 6px rgba(235, 195, 100, 0.3);
+    .name {
+      font-family: "Pacifico", cursive;
+      color: #d88e37;
+      font-size: 30px;
+      margin-top: 10px;
     }
 
-    .special-stickers i {
-      color: #b6792e;
-      transition: 0.2s;
-    }
-    .special-stickers i:hover {
-      transform: scale(1.15);
-      color: #9f671f;
+    .character-card p {
+      margin-top: 8px;
+      font-size: 14px;
+      line-height: 1.6;
     }
 
-    /* message */
-    .birthday-message {
-      background: #f6e7c6;
-      border-radius: 80px 20px 80px 20px;
-      padding: 1.2rem 2rem;
-      margin: 2rem 0 0.8rem;
-      border: 2px solid #f5d99a;
+    .party-hat {
+      position: absolute;
+
+      font-size: 62px;
+
+      top: -15px;
+      left: 105px;
+
+      z-index: 20;
+
+      transform: rotate(-12deg);
+    }
+
+    .bouquet {
+      position: absolute;
+
+      font-size: 75px;
+
+      right: -20px;
+      bottom: 0;
+
+      z-index: 10;
+
+      transform: rotate(-20deg);
+    }
+
+    .gift {
+      position: absolute;
+
+      font-size: 55px;
+
+      left: -5px;
+      bottom: 0;
+
+      z-index: 10;
+    }
+
+    /* ==============================
+       CAKE SECTION
+    ============================== */
+
+    .cake-section {
       text-align: center;
-      box-shadow: 0 6px 0 #dbb87a;
     }
 
-    .birthday-message p {
-      font-size: 1.4rem;
-      font-weight: 500;
-      color: #7a5f2c;
-      letter-spacing: 1px;
-    }
-    .birthday-message i {
-      margin: 0 6px;
-      color: #c78f44;
+    .cake {
+      margin: 20px auto;
+      position: relative;
+
+      width: 280px;
+      height: 250px;
     }
 
-    .footer-note {
-      margin-top: 1.5rem;
-      font-size: 0.95rem;
-      color: #9b7e4b;
-      background: #fcf0d4;
-      padding: 0.3rem 1.8rem;
-      border-radius: 60px;
-      display: inline-block;
-      backdrop-filter: blur(2px);
-      border: 1px solid #ebcfa0;
+    .cake-bottom {
+      position: absolute;
+
+      width: 280px;
+      height: 90px;
+
+      bottom: 0;
+
+      background: #f0b261;
+
+      border-radius: 15px 15px 35px 35px;
+
+      box-shadow: 0 10px 25px rgba(120, 80, 30, 0.18);
+    }
+
+    .cake-middle {
+      position: absolute;
+
+      width: 220px;
+      height: 75px;
+
+      bottom: 80px;
+      left: 30px;
+
+      background: #ffe0a8;
+
+      border-radius: 14px;
+    }
+
+    .cake-top {
+      position: absolute;
+
+      width: 160px;
+      height: 62px;
+
+      bottom: 145px;
+      left: 60px;
+
+      background: #f9c9cf;
+
+      border-radius: 14px;
+    }
+
+    .icing {
+      position: absolute;
+
+      width: 160px;
+      height: 22px;
+
+      bottom: 186px;
+      left: 60px;
+
+      border-radius: 50%;
+
+      background: white;
+    }
+
+    .candle {
+      position: absolute;
+
+      width: 10px;
+      height: 50px;
+
+      background: repeating-linear-gradient(
+        45deg,
+        #f09f82,
+        #f09f82 5px,
+        white 5px,
+        white 10px
+      );
+
+      bottom: 205px;
+
+      border-radius: 5px;
+    }
+
+    .candle:nth-child(1) {
+      left: 105px;
+    }
+
+    .candle:nth-child(2) {
+      left: 135px;
+    }
+
+    .candle:nth-child(3) {
+      left: 165px;
+    }
+
+    .flame {
+      width: 14px;
+      height: 21px;
+
+      background: #ffac33;
+
+      position: absolute;
+
+      left: -2px;
+      top: -20px;
+
+      border-radius: 50% 50% 50% 0;
+
+      transform: rotate(45deg);
+
+      animation: flame 0.7s ease-in-out infinite alternate;
+    }
+
+    @keyframes flame {
+      from {
+        transform: rotate(45deg) scale(1);
+      }
+
+      to {
+        transform: rotate(45deg) scale(1.18);
+      }
+    }
+
+    .cake-message {
+      font-family: "Pacifico", cursive;
+      font-size: 28px;
+      color: #d68d39;
+      margin-top: 15px;
+    }
+
+    /* ==============================
+       MEMORY GALLERY
+    ============================== */
+
+    .memory-section {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .upload-area {
+      max-width: 800px;
+      margin: 0 auto 40px;
+
+      text-align: center;
+
+      border: 3px dashed #edb867;
+      border-radius: 30px;
+
+      padding: 45px 20px;
+
+      background: rgba(255, 255, 255, 0.55);
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+    .upload-area:hover {
+      border-color: #d88b31;
+      background: rgba(255, 255, 255, 0.8);
+      transform: translateY(-3px);
+    }
+
+    .upload-icon {
+      font-size: 65px;
+      margin-bottom: 15px;
+    }
+
+    .upload-area h3 {
+      font-size: 24px;
+      color: #725138;
+    }
+
+    .upload-area p {
+      margin-top: 8px;
+      color: #8b735c;
+    }
+
+    #memoryInput {
+      display: none;
+    }
+
+    .gallery {
+      display: grid;
+
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+      gap: 25px;
+
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .memory-card {
+      background: white;
+      border-radius: 24px;
+      overflow: hidden;
+
+      box-shadow: 0 9px 30px rgba(120, 80, 30, 0.12);
+
+      animation: appear 0.5s ease;
+
+      position: relative;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .memory-card img,
+    .memory-card video {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .memory-caption {
+      padding: 15px;
+      text-align: center;
+
+      color: #8b6545;
+
+      font-family: "Pacifico", cursive;
+      font-size: 18px;
     }
 
     .remove-btn {
       position: absolute;
-      top: -6px;
-      right: -6px;
-      background: #e65c5c;
-      color: white;
-      border: 2px solid #fef7e0;
+
+      top: 10px;
+      right: 10px;
+
+      width: 35px;
+      height: 35px;
+
       border-radius: 50%;
-      width: 26px;
-      height: 26px;
-      font-size: 12px;
+      border: none;
+
+      background: rgba(255, 255, 255, 0.9);
+      color: #d36b5e;
+
       cursor: pointer;
-      display: none;
-      align-items: center;
-      justify-content: center;
+
+      font-size: 18px;
+      font-weight: bold;
+
       z-index: 5;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-      transition: 0.2s;
     }
 
-    .photo-card:hover .remove-btn {
-      display: flex;
+    /* ==============================
+       WISH SECTION
+    ============================== */
+
+    .wish-card {
+      max-width: 850px;
+      margin: auto;
+
+      padding: 50px;
+
+      text-align: center;
+
+      background: rgba(255, 255, 255, 0.75);
+
+      border-radius: 40px;
+
+      box-shadow: 0 15px 50px rgba(130, 87, 40, 0.15);
+
+      position: relative;
     }
 
-    .remove-btn:hover {
-      background: #c0392b;
-      transform: scale(1.1);
+    .wish-card::before {
+      content: "💛";
+
+      position: absolute;
+
+      font-size: 55px;
+
+      top: -30px;
+      left: 50%;
+
+      transform: translateX(-50%);
     }
 
-    @media (max-width: 600px) {
-      .card { padding: 1.5rem 1rem; }
-      .hero h1 { font-size: 2.5rem; }
-      .hero-stickers { font-size: 1.8rem; padding: 0.3rem 1rem; }
-      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
-      .birthday-message p { font-size: 1.1rem; }
-      .character-card { min-width: 130px; padding: 0.8rem 1rem; }
-      .character-avatar { font-size: 3.8rem; }
-      .character-name { font-size: 1.4rem; }
-      .cta-celebrate span { font-size: 1.2rem; }
-      .cta-btn { font-size: 1.1rem; padding: 0.2rem 1.2rem; }
-      .gallery-header { flex-direction: column; align-items: stretch; }
-      .upload-btn-wrapper { align-self: center; }
+    .wish-card h2 {
+      font-family: "Pacifico", cursive;
+      font-size: 40px;
+      color: #d98e37;
+    }
+
+    .wish-card p {
+      margin-top: 22px;
+      font-size: 17px;
+      line-height: 2;
+      color: #6b5442;
+    }
+
+    .signature {
+      margin-top: 25px;
+
+      font-family: "Pacifico", cursive;
+
+      font-size: 27px !important;
+
+      color: #d98282 !important;
+    }
+
+    /* ==============================
+       POPUP
+    ============================== */
+
+    .birthday-popup {
+      position: fixed;
+      inset: 0;
+
+      background: rgba(75, 53, 30, 0.55);
+
+      backdrop-filter: blur(8px);
+
+      z-index: 3000;
+
+      display: none;
+      justify-content: center;
+      align-items: center;
+
+      padding: 20px;
+    }
+
+    .popup-content {
+      max-width: 520px;
+      width: 100%;
+
+      background: #fff8cf;
+
+      padding: 45px 30px;
+
+      border-radius: 35px;
+
+      text-align: center;
+
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.3);
+
+      animation: popup 0.4s ease;
+    }
+
+    @keyframes popup {
+      from {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .popup-content .emoji {
+      font-size: 85px;
+    }
+
+    .popup-content h2 {
+      margin-top: 10px;
+
+      font-family: "Pacifico", cursive;
+
+      color: #df9236;
+
+      font-size: 40px;
+    }
+
+    /* ==============================
+       CONFETTI
+    ============================== */
+
+    .confetti {
+      position: fixed;
+
+      width: 10px;
+      height: 15px;
+
+      top: -20px;
+
+      z-index: 5000;
+
+      pointer-events: none;
+
+      animation: confettiFall linear forwards;
+    }
+
+    @keyframes confettiFall {
+      to {
+        transform: translateY(110vh) rotate(720deg);
+      }
+    }
+
+    /* ==============================
+       FOOTER
+    ============================== */
+
+    footer {
+      padding: 30px;
+      text-align: center;
+
+      background: #f5d981;
+
+      color: #745234;
+
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: #d47f31;
+    }
+
+    /* ==============================
+       RESPONSIVE
+    ============================== */
+
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+
+      .hero {
+        min-height: 90vh;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+
+      .characters {
+        gap: 30px;
+      }
+
+      .wish-card {
+        padding: 45px 22px;
+      }
+
+      .sticker {
+        font-size: 35px;
+        opacity: 0.7;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="card">
 
-    <!-- HEADER -->
-    <div class="hero">
-      <h1>
-        <span>Ani</span>
-        <span class="heart"><i class="fas fa-heart"></i></span>
-        <span>Shailee</span>
-        <span style="font-size: 1.8rem; color:#b8862b; margin-left: 0.2rem;">🎂</span>
-      </h1>
-      <div class="hero-stickers">
-        <i class="fas fa-birthday-cake" style="color:#d98c3b;"></i>
-        <i class="fas fa-balloon" style="color:#d66b6b;"></i>
-        <i class="fas fa-balloon" style="color:#7fb3d0;"></i>
-        <i class="fas fa-gift" style="color:#b8894b;"></i>
-        <i class="fas fa-star" style="color:#e6b450;"></i>
-      </div>
-    </div>
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
 
-    <!-- CHARACTERS -->
-    <div class="characters">
-      <div class="character-card">
-        <div class="character-avatar">🧑🏻</div>
-        <div class="character-name">Ani</div>
-        <div class="character-role"><i class="fas fa-crown"></i> birthday boy</div>
-        <div class="cute-sticker">
-          <i class="fas fa-balloon" style="color:#d47575;"></i>
-          <i class="fas fa-star" style="color:#eab652;"></i>
-        </div>
-      </div>
-      <div class="character-card">
-        <div class="character-avatar">👧🏻</div>
-        <div class="character-name">Shailee</div>
-        <div class="character-role"><i class="fas fa-heart" style="color:#c45c5c;"></i> sister</div>
-        <div class="cute-sticker">
-          <i class="fas fa-bouquet" style="color:#c4845b;"></i>
-          <i class="fas fa-gem" style="color:#b47b3a;"></i>
-        </div>
-      </div>
-    </div>
+  <nav>
+    <div class="logo">Ani's Birthday 🎂</div>
 
-    <!-- CTA -->
-    <div class="cta-celebrate">
-      <span>
-        <i class="fas fa-birthday-cake"></i> Cut the cake 
-        <i class="fas fa-arrow-right" style="font-size: 1.4rem;"></i>
-      </span>
-      <span class="cta-btn">
-        <i class="fas fa-hands"></i> Celebrate together!
-      </span>
-    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#celebration">Celebration</a></li>
+      <li><a href="#memories">Memories</a></li>
+      <li><a href="#wish">My Wish</a></li>
+    </ul>
+  </nav>
 
-    <!-- GALLERY WITH UPLOAD -->
-    <div class="gallery-section">
-      <div class="gallery-header">
-        <div class="gallery-title">
-          <i class="fas fa-images" style="margin-right: 10px;"></i>  from gallery · happy moments
-        </div>
-        <div class="upload-btn-wrapper">
-          <button class="upload-btn"><i class="fas fa-plus-circle"></i> Add photo</button>
-          <input type="file" accept="image/*" multiple id="photoUpload" />
-        </div>
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="hero" id="home">
+
+    <div class="balloon b1"></div>
+    <div class="balloon b2"></div>
+    <div class="balloon b3"></div>
+    <div class="balloon b4"></div>
+
+    <div class="sticker s1">🎈</div>
+    <div class="sticker s2">🌟</div>
+    <div class="sticker s3">🎁</div>
+    <div class="sticker s4">🧸</div>
+    <div class="sticker s5">✨</div>
+
+    <div class="hero-content">
+
+      <div class="small-text">
+        🎉 SHAILEE HAS A SPECIAL SURPRISE FOR YOU 🎉
       </div>
 
-      <div class="gallery-grid" id="galleryGrid">
-        <!-- default photo cards -->
-        <div class="photo-card" data-id="1">
-          <div class="photo-placeholder">
-            <i class="fas fa-camera" style="font-size: 2.8rem;"></i>
-            <span class="photo-sticker"><i class="fas fa-heart" style="color:#d46b6b;"></i></span>
-          </div>
-          <span class="photo-label"><i class="fas fa-user"></i> Ani & Shailee</span>
-          <button class="remove-btn" data-id="1">✕</button>
-        </div>
+      <h1>Happy Birthday</h1>
 
-        <div class="photo-card" data-id="2">
-          <div class="photo-placeholder">
-            <i class="fas fa-image" style="font-size: 2.8rem;"></i>
-            <span class="photo-sticker"><i class="fas fa-star" style="color:#e6b450;"></i></span>
-          </div>
-          <span class="photo-label"><i class="fas fa-user"></i> Ani</span>
-          <button class="remove-btn" data-id="2">✕</button>
-        </div>
+      <h2>Ani! 🎂💛</h2>
 
-        <div class="photo-card" data-id="3">
-          <div class="photo-placeholder">
-            <i class="fas fa-camera-retro" style="font-size: 2.8rem;"></i>
-            <span class="photo-sticker"><i class="fas fa-cake" style="color:#c98240;"></i></span>
-          </div>
-          <span class="photo-label"><i class="fas fa-users"></i> Shailee</span>
-          <button class="remove-btn" data-id="3">✕</button>
-        </div>
-
-        <div class="photo-card" data-id="4">
-          <div class="photo-placeholder">
-            <i class="fas fa-palette" style="font-size: 2.8rem;"></i>
-            <span class="photo-sticker"><i class="fas fa-balloon" style="color:#66b5b5;"></i></span>
-          </div>
-          <span class="photo-label"><i class="fas fa-heart"></i> fun</span>
-          <button class="remove-btn" data-id="4">✕</button>
-        </div>
-
-        <div class="photo-card" data-id="5">
-          <div class="photo-placeholder">
-            <i class="fas fa-smile" style="font-size: 2.8rem;"></i>
-            <span class="photo-sticker"><i class="fas fa-gift" style="color:#b47b3a;"></i></span>
-          </div>
-          <span class="photo-label"><i class="fas fa-cake"></i> birthday</span>
-          <button class="remove-btn" data-id="5">✕</button>
-        </div>
-      </div>
-    </div>
-
-    <!-- STICKERS -->
-    <div class="special-stickers">
-      <span><i class="fas fa-bouquet"></i> bouquet</span>
-      <span><i class="fas fa-birthday-cake"></i> cake</span>
-      <span><i class="fas fa-balloon"></i> balloons</span>
-      <span><i class="fas fa-gem"></i> sparkle</span>
-      <span><i class="fas fa-music"></i> melody</span>
-    </div>
-
-    <!-- MESSAGE -->
-    <div class="birthday-message">
       <p>
-        <i class="fas fa-birthday-cake" style="font-size: 1.8rem;"></i>
-        Happy Birthday Ani !
-        <i class="fas fa-balloon" style="font-size: 1.8rem;"></i>
-        <br style="display: none;">
-        <span style="display: inline-block; margin-top: 4px; font-weight: 300; font-size: 1.0rem; color:#946f3a;">
-          <i class="fas fa-heart" style="color:#c45c5c;"></i>  Your sister Shailee celebrates with you  <i class="fas fa-heart" style="color:#c45c5c;"></i>
-        </span>
+        Today isn't just another day. It's the birthday of an amazing
+        brother, a wonderful person and someone who makes every memory
+        a little more special.
       </p>
+
+      <button class="btn" onclick="celebrateBirthday()">
+        🎉 Start Celebration
+      </button>
+
+      <a href="#memories" class="btn">
+        📸 Our Memories
+      </a>
+
     </div>
 
-    <!-- FOOTER -->
-    <div style="display: flex; justify-content: center; gap: 0.3rem 1.2rem; flex-wrap: wrap; margin-top: 0.5rem; font-size: 1.6rem; color:#c6964b;">
-      <i class="fas fa-cake"></i>
-      <i class="fas fa-balloon" style="color:#d47575;"></i>
-      <i class="fas fa-bouquet" style="color:#c4845b;"></i>
-      <i class="fas fa-star" style="color:#eab652;"></i>
-      <i class="fas fa-gift"></i>
-      <i class="fas fa-heart" style="color:#cc6b6b;"></i>
+  </section>
+
+  <!-- =========================
+       CHARACTERS
+  ========================== -->
+
+  <section class="characters-section" id="celebration">
+
+    <div class="section-title">
+      <span>Brother & Sister</span>
+      <h2>Celebrating Together 💛</h2>
     </div>
 
-    <div class="footer-note">
-      <i class="fas fa-camera"></i>  click "Add photo" to upload from your gallery  <i class="fas fa-images"></i>
+    <div class="characters">
+
+      <!-- ANI -->
+
+      <div class="character-card">
+
+        <div class="character boy">
+
+          <div class="party-hat">🥳</div>
+
+          <div class="hair"></div>
+
+          <div class="head">
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="smile"></div>
+
+          </div>
+
+          <div class="body-shape"></div>
+
+          <div class="arm left"></div>
+          <div class="arm right"></div>
+
+          <div class="gift">🎁</div>
+
+        </div>
+
+        <div class="name">Ani</div>
+
+        <p>
+          The birthday boy! 🎂
+          <br />
+          Today the celebration is all about you.
+        </p>
+
+      </div>
+
+      <!-- SHAILEE -->
+
+      <div class="character-card">
+
+        <div class="character girl">
+
+          <div class="hair"></div>
+
+          <div class="head">
+
+            <div class="eye left"></div>
+            <div class="eye right"></div>
+
+            <div class="smile"></div>
+
+          </div>
+
+          <div class="body-shape"></div>
+
+          <div class="arm left"></div>
+          <div class="arm right"></div>
+
+          <div class="bouquet">💐</div>
+
+        </div>
+
+        <div class="name">Shailee</div>
+
+        <p>
+          Your sister, celebrating your special day
+          with lots of happiness, flowers and love. 💐
+        </p>
+
+      </div>
+
     </div>
-    <div style="margin-top: 0.8rem; font-size: 0.8rem; color: #b4873d; opacity: 0.7; text-align: center; letter-spacing: 0.5px;">
-      <i class="fas fa-paint-brush"></i> light yellow theme · stickers: bouquet, cake, balloons & more
+
+  </section>
+
+  <!-- =========================
+       CAKE
+  ========================== -->
+
+  <section class="cake-section">
+
+    <div class="section-title">
+      <span>Make A Wish</span>
+      <h2>Birthday Cake 🎂</h2>
     </div>
+
+    <div class="cake">
+
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+
+      <div class="icing"></div>
+
+      <div class="cake-top"></div>
+
+      <div class="cake-middle"></div>
+
+      <div class="cake-bottom"></div>
+
+    </div>
+
+    <div class="cake-message">
+      Make a wish, Ani! ✨
+    </div>
+
+    <button class="btn" onclick="blowCandles()">
+      🕯️ Blow The Candles
+    </button>
+
+  </section>
+
+  <!-- =========================
+       MEMORIES
+  ========================== -->
+
+  <section class="memory-section" id="memories">
+
+    <div class="section-title">
+      <span>Our Beautiful Moments</span>
+      <h2>Memory Gallery 📸</h2>
+    </div>
+
+    <div
+      class="upload-area"
+      onclick="document.getElementById('memoryInput').click()"
+    >
+
+      <div class="upload-icon">📸</div>
+
+      <h3>Add Our Beautiful Memories</h3>
+
+      <p>
+        Click here to choose photos or videos from your gallery.
+      </p>
+
+      <button class="btn">
+        + Add Photos & Videos
+      </button>
+
+      <input
+        type="file"
+        id="memoryInput"
+        accept="image/*,video/*"
+        multiple
+      />
+
+    </div>
+
+    <div class="gallery" id="gallery"></div>
+
+  </section>
+
+  <!-- =========================
+       MESSAGE FROM SHAILEE
+  ========================== -->
+
+  <section id="wish">
+
+    <div class="section-title">
+      <span>A Special Message</span>
+      <h2>For My Brother 💛</h2>
+    </div>
+
+    <div class="wish-card">
+
+      <h2>Dear Ani,</h2>
+
+      <p>
+        Happy Birthday to the most wonderful brother! 🎂
+        Having you as my brother makes life so much more special.
+        From all our silly moments and little fights to our happiest
+        memories together, every moment has its own beautiful place
+        in my heart.
+        <br /><br />
+        I hope this birthday brings you countless reasons to smile,
+        exciting adventures, success, happiness and everything
+        your heart wishes for.
+        <br /><br />
+        May you always remain happy, keep chasing your dreams and
+        never stop being the amazing person you are.
+        Here's to many more birthdays and countless memories together.
+        🎈✨
+      </p>
+
+      <p class="signature">
+        With lots of love,<br />
+        Your sister Shailee 💐💛
+      </p>
+
+    </div>
+
+  </section>
+
+  <!-- =========================
+       POPUP
+  ========================== -->
+
+  <div class="birthday-popup" id="birthdayPopup">
+
+    <div class="popup-content">
+
+      <div class="emoji">🎂</div>
+
+      <h2>Happy Birthday Ani!</h2>
+
+      <p>
+        May your birthday be filled with happiness,
+        laughter, beautiful memories and lots of cake!
+        🎈🎁✨
+      </p>
+
+      <button class="btn" onclick="closePopup()">
+        Thank You 💛
+      </button>
+
+    </div>
+
   </div>
 
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+    Made with 💛 by <strong>Shailee</strong>
+    for her amazing brother <strong>Ani</strong> 🎂
+  </footer>
+
   <script>
-    (function() {
-      const galleryGrid = document.getElementById('galleryGrid');
-      const fileInput = document.getElementById('photoUpload');
-      let photoCounter = 100; // for unique IDs
 
-      // Function to create a new photo card with an uploaded image
-      function createPhotoCard(src, label = '📸 from gallery') {
-        const card = document.createElement('div');
-        card.className = 'photo-card';
-        const id = photoCounter++;
-        card.dataset.id = id;
+    /* =================================
+       MEMORY GALLERY
+    ================================= */
 
-        const placeholder = document.createElement('div');
-        placeholder.className = 'photo-placeholder';
+    const input = document.getElementById("memoryInput");
+    const gallery = document.getElementById("gallery");
 
-        const img = document.createElement('img');
-        img.src = src;
-        img.alt = 'Uploaded photo';
-        placeholder.appendChild(img);
+    input.addEventListener("change", function (event) {
 
-        // sticker
-        const sticker = document.createElement('span');
-        sticker.className = 'photo-sticker';
-        sticker.innerHTML = '<i class="fas fa-heart" style="color:#d46b6b;"></i>';
-        placeholder.appendChild(sticker);
+      const files = event.target.files;
 
-        card.appendChild(placeholder);
+      Array.from(files).forEach((file) => {
 
-        const labelSpan = document.createElement('span');
-        labelSpan.className = 'photo-label';
-        labelSpan.innerHTML = `<i class="fas fa-image"></i> ${label}`;
-        card.appendChild(labelSpan);
+        const card = document.createElement("div");
+        card.classList.add("memory-card");
 
-        // remove button
-        const removeBtn = document.createElement('button');
-        removeBtn.className = 'remove-btn';
-        removeBtn.dataset.id = id;
-        removeBtn.textContent = '✕';
-        removeBtn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const parentCard = this.closest('.photo-card');
-          if (parentCard) {
-            parentCard.remove();
-          }
-        });
-        card.appendChild(removeBtn);
+        const fileURL = URL.createObjectURL(file);
 
-        return card;
+        const removeButton = document.createElement("button");
+
+        removeButton.innerHTML = "×";
+        removeButton.classList.add("remove-btn");
+
+        removeButton.onclick = function () {
+
+          URL.revokeObjectURL(fileURL);
+
+          card.remove();
+
+        };
+
+        card.appendChild(removeButton);
+
+        if (file.type.startsWith("image/")) {
+
+          const img = document.createElement("img");
+
+          img.src = fileURL;
+
+          img.alt = "Birthday memory";
+
+          card.appendChild(img);
+
+        }
+
+        else if (file.type.startsWith("video/")) {
+
+          const video = document.createElement("video");
+
+          video.src = fileURL;
+
+          video.controls = true;
+
+          card.appendChild(video);
+
+        }
+
+        const caption = document.createElement("div");
+
+        caption.classList.add("memory-caption");
+
+        caption.innerHTML = "A Beautiful Memory 💛";
+
+        card.appendChild(caption);
+
+        gallery.appendChild(card);
+
+      });
+
+      input.value = "";
+
+    });
+
+
+    /* =================================
+       START CELEBRATION
+    ================================= */
+
+    function celebrateBirthday() {
+
+      document.getElementById("birthdayPopup").style.display = "flex";
+
+      createConfetti(120);
+
+    }
+
+
+    function closePopup() {
+
+      document.getElementById("birthdayPopup").style.display = "none";
+
+    }
+
+
+    /* =================================
+       BLOW CANDLES
+    ================================= */
+
+    function blowCandles() {
+
+      const flames = document.querySelectorAll(".flame");
+
+      flames.forEach((flame) => {
+
+        flame.style.display = "none";
+
+      });
+
+      createConfetti(100);
+
+      setTimeout(() => {
+
+        alert(
+          "🎉 Your wish has been made!\n\nHappy Birthday Ani! 🎂💛"
+        );
+
+      }, 300);
+
+    }
+
+
+    /* =================================
+       CONFETTI
+    ================================= */
+
+    function createConfetti(amount) {
+
+      const colors = [
+        "#ffbe5c",
+        "#ff9f9f",
+        "#f4d35e",
+        "#a8d5ba",
+        "#f7b7c3",
+        "#ffffff"
+      ];
+
+      for (let i = 0; i < amount; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.classList.add("confetti");
+
+        confetti.style.left =
+          Math.random() * 100 + "vw";
+
+        confetti.style.background =
+          colors[Math.floor(Math.random() * colors.length)];
+
+        confetti.style.animationDuration =
+          2 + Math.random() * 3 + "s";
+
+        confetti.style.width =
+          6 + Math.random() * 8 + "px";
+
+        confetti.style.height =
+          8 + Math.random() * 12 + "px";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+
+          confetti.remove();
+
+        }, 5500);
+
       }
 
-      // Handle file uploads
-      fileInput.addEventListener('change', function(e) {
-        const files = Array.from(e.target.files);
-        if (files.length === 0) return;
+    }
 
-        files.forEach(file => {
-          if (!file.type.startsWith('image/')) return;
 
-          const reader = new FileReader();
-          reader.onload = function(ev) {
-            const imgSrc = ev.target.result;
-            // label with filename (shortened)
-            let label = file.name;
-            if (label.length > 20) label = label.substring(0, 18) + '…';
-            const newCard = createPhotoCard(imgSrc, label);
-            galleryGrid.appendChild(newCard);
-          };
-          reader.readAsDataURL(file);
-        });
+    /* =================================
+       FIRST PAGE LOAD EFFECT
+    ================================= */
 
-        // Reset input so same file can be re-uploaded
-        fileInput.value = '';
-      });
+    window.addEventListener("load", () => {
 
-      // Remove button for default cards (already have remove buttons)
-      document.querySelectorAll('.remove-btn').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const card = this.closest('.photo-card');
-          if (card) {
-            card.remove();
-          }
-        });
-      });
+      setTimeout(() => {
 
-      // Optional: drag and drop support for gallery? but keep it simple
-      console.log('📸 Gallery ready – upload photos from your device!');
-    })();
+        createConfetti(45);
+
+      }, 700);
+
+    });
+
   </script>
+
 </body>
 </html>
