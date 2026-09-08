@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎈 Happy Birthday Ani · Shailee & Ani</title>
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, -apple-system, sans-serif;
+    }
+
+    body {
+      background: #fff9e6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.5rem;
+    }
+
+    .card {
+      max-width: 1100px;
+      width: 100%;
+      background: rgba(255, 251, 235, 0.7);
+      backdrop-filter: blur(2px);
+      border-radius: 60px 60px 40px 40px;
+      box-shadow: 0 20px 40px rgba(255, 215, 100, 0.25), 0 8px 20px rgba(255, 200, 80, 0.2);
+      padding: 2rem 2rem 3rem;
+      border: 2px solid #fce6b4;
+      transition: all 0.2s;
+    }
+
+    /* header: Ani's birthday + Shailee sister */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem 1.8rem;
+      margin-bottom: 1.8rem;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 3.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: #b8862b;
+      text-shadow: 4px 4px 0 #f7e2b0, 0 2px 10px rgba(255, 215, 0, 0.2);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero h1 .heart {
+      color: #e65c5c;
+      font-size: 3.2rem;
+      filter: drop-shadow(0 4px 6px rgba(230, 92, 92, 0.3));
+    }
+
+    .hero-stickers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.8rem 1.2rem;
+      font-size: 2.4rem;
+      background: rgba(255, 235, 170, 0.5);
+      padding: 0.6rem 1.8rem;
+      border-radius: 100px;
+      backdrop-filter: blur(4px);
+      border: 1px solid #f9d98e;
+    }
+
+    .hero-stickers i {
+      transition: 0.2s ease;
+      color: #d9a066;
+    }
+    .hero-stickers i:hover {
+      transform: scale(1.2) rotate(4deg);
+      color: #b87333;
+    }
+
+    /* two characters: Ani (boy) & Shailee (sister) */
+    .characters {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem 3rem;
+      margin: 1.8rem 0 2rem;
+    }
+
+    .character-card {
+      background: #fef7e0;
+      border-radius: 60px 20px 60px 20px;
+      padding: 1.2rem 1.8rem 1.8rem;
+      box-shadow: 0 12px 20px rgba(190, 155, 70, 0.15), 0 0 0 2px #fbe39e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 160px;
+      transition: 0.2s;
+      border: 1px solid #f5d99a;
+    }
+
+    .character-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 16px 28px rgba(200, 160, 60, 0.25);
+    }
+
+    .character-avatar {
+      font-size: 4.8rem;
+      line-height: 1;
+      background: #fbefd0;
+      padding: 0.4rem 0.8rem;
+      border-radius: 100px;
+      margin-bottom: 0.3rem;
+      border: 2px solid #ebcfa0;
+      box-shadow: inset 0 2px 8px rgba(255, 215, 0, 0.2);
+    }
+
+    .character-name {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #7a5f2c;
+      letter-spacing: 1px;
+      background: #f7e4bb;
+      padding: 0.1rem 1.6rem;
+      border-radius: 60px;
+      border: 1px solid #ebcfa0;
+      margin-top: 0.2rem;
+    }
+
+    .character-role {
+      font-size: 0.9rem;
+      background: #fdf3d5;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      color: #9b7e4b;
+      margin-top: 0.2rem;
+      border: 1px solid #f5d99a;
+    }
+
+    .character-card .cute-sticker {
+      font-size: 1.8rem;
+      margin-top: 0.2rem;
+      color: #b6792e;
+    }
+
+    /* CUT THE CAKE + CELEBRATE TOGETHER */
+    .cta-celebrate {
+      background: #fcf0d4;
+      border-radius: 100px 30px 100px 30px;
+      padding: 0.8rem 2rem;
+      margin: 0.2rem 0 1.8rem;
+      border: 2px solid #f5d99a;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.6rem 1.8rem;
+      box-shadow: 0 6px 0 #dbb87a;
+    }
+
+    .cta-celebrate span {
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #7a5f2c;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .cta-celebrate i {
+      color: #c78f44;
+      font-size: 2rem;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
+    }
+
+    .cta-btn {
+      background: #fae3b3;
+      border: 2px solid #dbb87a;
+      border-radius: 60px;
+      padding: 0.3rem 1.8rem;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #7a5f2c;
+      transition: 0.2s;
+      box-shadow: 0 4px 0 #b8894b;
+      cursor: default;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .cta-btn i {
+      font-size: 1.8rem;
+      color: #b87333;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #b8894b;
+      background: #fce8be;
+    }
+
+    /* photo gallery */
+    .gallery-section {
+      margin: 2.2rem 0 1.8rem;
+    }
+
+    .gallery-title {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #ab7a3a;
+      letter-spacing: 1px;
+      background: #fbeec8;
+      display: inline-block;
+      padding: 0.3rem 2rem;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+      box-shadow: inset 0 1px 6px rgba(255, 215, 0, 0.2);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1.5rem;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .photo-card {
+      background: #fef7e0;
+      border-radius: 40px 20px 40px 20px;
+      padding: 0.8rem 0.8rem 1.2rem;
+      box-shadow: 0 10px 18px rgba(215, 175, 80, 0.15), 0 0 0 2px #fbe39e;
+      transition: 0.2s;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      backdrop-filter: blur(2px);
+    }
+
+    .photo-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 16px 28px rgba(200, 160, 60, 0.25);
+    }
+
+    .photo-placeholder {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      background: #f6e3ba;
+      border-radius: 30px 12px 30px 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #bf8f4a;
+      border: 2px dashed #ebc47a;
+      transition: 0.2s;
+      background-image: radial-gradient(circle at 20% 25%, #fcedc8 2px, transparent 2px);
+      background-size: 24px 24px;
+      position: relative;
+    }
+
+    .photo-placeholder i {
+      opacity: 0.7;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.05));
+    }
+
+    .photo-card .photo-label {
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #8b6f38;
+      background: #f7e4bb;
+      padding: 0.2rem 1.2rem;
+      border-radius: 30px;
+      letter-spacing: 0.5px;
+      border: 1px solid #ebcfa0;
+    }
+
+    .photo-sticker {
+      position: absolute;
+      bottom: -8px;
+      right: -8px;
+      font-size: 2rem;
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+      transform: rotate(8deg);
+      transition: 0.2s;
+    }
+
+    .photo-card:hover .photo-sticker {
+      transform: rotate(0deg) scale(1.1);
+    }
+
+    /* special stickers: bouquet, cake, balloons */
+    .special-stickers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.8rem 1.8rem;
+      margin: 2rem 0 0.5rem;
+      padding: 0.8rem 1.5rem;
+      background: #fdf3d5;
+      border-radius: 100px;
+      border: 1px solid #f5d99a;
+    }
+
+    .special-stickers span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      font-size: 1.7rem;
+      background: #f8e7be;
+      padding: 0.2rem 1.2rem;
+      border-radius: 40px;
+      box-shadow: inset 0 2px 6px rgba(235, 195, 100, 0.3);
+    }
+
+    .special-stickers i {
+      color: #b6792e;
+      transition: 0.2s;
+    }
+    .special-stickers i:hover {
+      transform: scale(1.15);
+      color: #9f671f;
+    }
+
+    /* message: Ani's birthday, Shailee sister */
+    .birthday-message {
+      background: #f6e7c6;
+      border-radius: 80px 20px 80px 20px;
+      padding: 1.2rem 2rem;
+      margin: 2rem 0 0.8rem;
+      border: 2px solid #f5d99a;
+      text-align: center;
+      box-shadow: 0 6px 0 #dbb87a;
+    }
+
+    .birthday-message p {
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: #7a5f2c;
+      letter-spacing: 1px;
+    }
+    .birthday-message i {
+      margin: 0 6px;
+      color: #c78f44;
+    }
+
+    .footer-note {
+      margin-top: 1.5rem;
+      font-size: 0.95rem;
+      color: #9b7e4b;
+      background: #fcf0d4;
+      padding: 0.3rem 1.8rem;
+      border-radius: 60px;
+      display: inline-block;
+      backdrop-filter: blur(2px);
+      border: 1px solid #ebcfa0;
+    }
+
+    @media (max-width: 600px) {
+      .card { padding: 1.5rem 1rem; }
+      .hero h1 { font-size: 2.5rem; }
+      .hero-stickers { font-size: 1.8rem; padding: 0.3rem 1rem; }
+      .gallery-grid { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+      .birthday-message p { font-size: 1.1rem; }
+      .character-card { min-width: 130px; padding: 0.8rem 1rem; }
+      .character-avatar { font-size: 3.8rem; }
+      .character-name { font-size: 1.4rem; }
+      .cta-celebrate span { font-size: 1.2rem; }
+      .cta-btn { font-size: 1.1rem; padding: 0.2rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+
+    <!-- HEADER: Ani & Shailee (sister) -->
+    <div class="hero">
+      <h1>
+        <span>Ani</span>
+        <span class="heart"><i class="fas fa-heart"></i></span>
+        <span>Shailee</span>
+        <span style="font-size: 1.8rem; color:#b8862b; margin-left: 0.2rem;">🎂</span>
+      </h1>
+      <div class="hero-stickers">
+        <i class="fas fa-birthday-cake" style="color:#d98c3b;"></i>
+        <i class="fas fa-balloon" style="color:#d66b6b;"></i>
+        <i class="fas fa-balloon" style="color:#7fb3d0;"></i>
+        <i class="fas fa-gift" style="color:#b8894b;"></i>
+        <i class="fas fa-star" style="color:#e6b450;"></i>
+      </div>
+    </div>
+
+    <!-- TWO CHARACTERS: Ani (boy) & Shailee (sister) -->
+    <div class="characters">
+      <!-- Ani – birthday boy -->
+      <div class="character-card">
+        <div class="character-avatar">🧑🏻</div>
+        <div class="character-name">Ani</div>
+        <div class="character-role"><i class="fas fa-crown"></i> birthday boy</div>
+        <div class="cute-sticker">
+          <i class="fas fa-balloon" style="color:#d47575;"></i>
+          <i class="fas fa-star" style="color:#eab652;"></i>
+        </div>
+      </div>
+
+      <!-- Shailee – sister -->
+      <div class="character-card">
+        <div class="character-avatar">👧🏻</div>
+        <div class="character-name">Shailee</div>
+        <div class="character-role"><i class="fas fa-heart" style="color:#c45c5c;"></i> sister</div>
+        <div class="cute-sticker">
+          <i class="fas fa-bouquet" style="color:#c4845b;"></i>
+          <i class="fas fa-gem" style="color:#b47b3a;"></i>
+        </div>
+      </div>
+    </div>
+
+    <!-- CUT THE CAKE · CELEBRATE TOGETHER -->
+    <div class="cta-celebrate">
+      <span>
+        <i class="fas fa-birthday-cake"></i> Cut the cake 
+        <i class="fas fa-arrow-right" style="font-size: 1.4rem;"></i>
+      </span>
+      <span class="cta-btn">
+        <i class="fas fa-hands"></i> Celebrate together!
+      </span>
+    </div>
+
+    <!-- PHOTO GALLERY -->
+    <div class="gallery-section">
+      <div class="gallery-title">
+        <i class="fas fa-images" style="margin-right: 10px;"></i>  from gallery · happy moments
+      </div>
+
+      <div class="gallery-grid">
+        <div class="photo-card">
+          <div class="photo-placeholder">
+            <i class="fas fa-camera" style="font-size: 2.8rem;"></i>
+            <span class="photo-sticker"><i class="fas fa-heart" style="color:#d46b6b;"></i></span>
+          </div>
+          <span class="photo-label"><i class="fas fa-user"></i> Ani & Shailee</span>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-placeholder">
+            <i class="fas fa-image" style="font-size: 2.8rem;"></i>
+            <span class="photo-sticker"><i class="fas fa-star" style="color:#e6b450;"></i></span>
+          </div>
+          <span class="photo-label"><i class="fas fa-user"></i> Ani</span>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-placeholder">
+            <i class="fas fa-camera-retro" style="font-size: 2.8rem;"></i>
+            <span class="photo-sticker"><i class="fas fa-cake" style="color:#c98240;"></i></span>
+          </div>
+          <span class="photo-label"><i class="fas fa-users"></i> Shailee</span>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-placeholder">
+            <i class="fas fa-palette" style="font-size: 2.8rem;"></i>
+            <span class="photo-sticker"><i class="fas fa-balloon" style="color:#66b5b5;"></i></span>
+          </div>
+          <span class="photo-label"><i class="fas fa-heart"></i> fun</span>
+        </div>
+
+        <div class="photo-card">
+          <div class="photo-placeholder">
+            <i class="fas fa-smile" style="font-size: 2.8rem;"></i>
+            <span class="photo-sticker"><i class="fas fa-gift" style="color:#b47b3a;"></i></span>
+          </div>
+          <span class="photo-label"><i class="fas fa-cake"></i> birthday</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOUQUET, CAKE, BALLOONS STICKERS -->
+    <div class="special-stickers">
+      <span><i class="fas fa-bouquet"></i> bouquet</span>
+      <span><i class="fas fa-birthday-cake"></i> cake</span>
+      <span><i class="fas fa-balloon"></i> balloons</span>
+      <span><i class="fas fa-gem"></i> sparkle</span>
+      <span><i class="fas fa-music"></i> melody</span>
+    </div>
+
+    <!-- MESSAGE: Ani's birthday with sister Shailee -->
+    <div class="birthday-message">
+      <p>
+        <i class="fas fa-birthday-cake" style="font-size: 1.8rem;"></i>
+        Happy Birthday Ani !
+        <i class="fas fa-balloon" style="font-size: 1.8rem;"></i>
+        <br style="display: none;">
+        <span style="display: inline-block; margin-top: 4px; font-weight: 300; font-size: 1.0rem; color:#946f3a;">
+          <i class="fas fa-heart" style="color:#c45c5c;"></i>  Your sister Shailee celebrates with you  <i class="fas fa-heart" style="color:#c45c5c;"></i>
+        </span>
+      </p>
+    </div>
+
+    <!-- footer -->
+    <div style="display: flex; justify-content: center; gap: 0.3rem 1.2rem; flex-wrap: wrap; margin-top: 0.5rem; font-size: 1.6rem; color:#c6964b;">
+      <i class="fas fa-cake"></i>
+      <i class="fas fa-balloon" style="color:#d47575;"></i>
+      <i class="fas fa-bouquet" style="color:#c4845b;"></i>
+      <i class="fas fa-star" style="color:#eab652;"></i>
+      <i class="fas fa-gift"></i>
+      <i class="fas fa-heart" style="color:#cc6b6b;"></i>
+    </div>
+
+    <div class="footer-note">
+      <i class="fas fa-camera"></i>  add your photos from gallery  <i class="fas fa-images"></i>
+    </div>
+    <div style="margin-top: 0.8rem; font-size: 0.8rem; color: #b4873d; opacity: 0.7; text-align: center; letter-spacing: 0.5px;">
+      <i class="fas fa-paint-brush"></i> light yellow theme · stickers: bouquet, cake, balloons & more
+    </div>
+  </div>
+</body>
+</html>
